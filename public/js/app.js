@@ -6,7 +6,7 @@ document.getElementById('weatherForm').addEventListener('submit', (event) => {
     const address = document.getElementById('address').value
     const resultDiv = document.getElementById('result');
     resultDiv.innerHTML='Fetching Weather...'
-    fetch('http://localhost:3000/forecast?search='+address)
+    fetch('/forecast?search='+address)
         .then(response => response.json())
         .then(data => {
             console.log(data)

@@ -9,6 +9,8 @@ const forecast = require('./utils/forecast')
 //initializing express
 const app = express()
 
+//setup dynamic port for Heroku
+const port = process.env.PORT
 //templates related paths
 const publicDirPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname ,'../public/templates')
@@ -77,6 +79,6 @@ app.get('*', (req, res) => {
 
 
 
-app.listen(3000, () => {
-    console.log('Express has started listening at port 3000')
+app.listen(port, () => {
+    console.log('Express has started listening at port '+port)
 })
